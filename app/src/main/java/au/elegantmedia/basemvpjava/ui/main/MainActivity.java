@@ -1,34 +1,31 @@
 package au.elegantmedia.basemvpjava.ui.main;
 
 import android.os.Bundle;
-import android.os.Handler;
-import android.support.v4.app.Fragment;
+import android.support.v7.widget.Toolbar;
 import au.elegantmedia.basemvpjava.R;
 import au.elegantmedia.basemvpjava.ui.base.BaseActivity;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class MainActivity extends BaseActivity {
+
+  @BindView(R.id.main_toolbar) Toolbar toolbar;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
-
+    ButterKnife.bind(this);
+    init();
   }
 
-  private void setFragment(final Fragment fragment, final Bundle bundle) {
-
-    new Handler().postDelayed(new Runnable() {
-      @Override public void run() {
-        if (bundle != null) {
-          fragment.setArguments(bundle);
-        }
-
-        MainActivity.this.getSupportFragmentManager().beginTransaction()
-            .replace(R.id.fl_container, fragment)
-            .commit();
-      }
-    }, 450);
+  private void init(){
+    setSupportActionBar(toolbar);
+    getSupportActionBar().setTitle("Home");
+    getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+    getSupportActionBar().setHomeButtonEnabled(false);
   }
+
   @Override public void onBackPressed() {
     super.onBackPressed();
     finishAffinity();
