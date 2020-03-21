@@ -1,6 +1,7 @@
 package au.elegantmedia.basemvpjava.ui.hospital_updates;
 
 import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.widget.TextView;
 import au.elegantmedia.basemvpjava.R;
@@ -12,6 +13,7 @@ public class HospitalUpdatesActivity extends BaseActivity {
 
   @BindView(R.id.toolbar_hospital_updates) Toolbar mToolbar;
   @BindView(R.id.sub_toolbar_title) TextView subToolbarTitle;
+  @BindView(R.id.rv_hospital_updates) RecyclerView rvHospitalUpdates;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {

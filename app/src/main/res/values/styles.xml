@@ -67,4 +67,24 @@
     <item name="android:fontFamily">@font/poppins_bold</item>
   </style>
 
+  <style name="GrayTextBoldStyle">
+    <item name="android:textColor">@color/colorTextGray</item>
+    <item name="android:textStyle">bold</item>
+    <item name="android:fontFamily">@font/poppins_bold</item>
+  </style>
+
+  <style name="GrayTextNormalStyle">
+    <item name="android:textColor">@color/colorTextGray</item>
+    <item name="android:textStyle">normal</item>
+    <item name="android:fontFamily">@font/poppins_regular</item>
+  </style>
+
+  <style name="GrayTextBoldStyle.Size16">
+    <item name="android:textSize">16sp</item>
+  </style>
+
+  <style name="GrayTextNormalStyle.Size14">
+    <item name="android:textSize">14sp</item>
+  </style>
+
 </resources>
