@@ -1,6 +1,9 @@
 <resources>
   <string name="app_name">BaseMvpJava</string>
 
-  <!-- TODO: Remove or change this placeholder text -->
-  <string name="hello_blank_fragment">Hello blank fragment</string>
+  <string name="title_home">Home</string>
+  <string name="title_hospital_updates">Hospital Live Updates</string>
+
+  <string name="main_hospital_update_desc">Sri Lanka main hospital\'s \n live update</string>
+  <string name="live_update_desc">World wide &amp; Sri Lanka\'s live update</string>
 </resources>
