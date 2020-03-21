@@ -14,6 +14,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.LongSparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.Window;
 import android.widget.TextView;
 import android.widget.Toast;
 import au.elegantmedia.basemvpjava.BaseApplication;
@@ -97,6 +98,30 @@ public class BaseFragment extends Fragment {
   /*public void showDialog(String title, String message, String dismissText) {
     ViewDialog.showDialog(mContext, title, message, dismissText);
   }*/
+
+  public void showProgress() {
+    try {
+      if (mProgress == null) {
+        mProgress = new Dialog(getContext(), R.style.ProgressbarStyle);
+        mProgress.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        mProgress.setContentView(R.layout.content_page_loader);
+        mProgress.setCancelable(false);
+      }
+
+      if (!mProgress.isShowing()) {
+        mProgress.show();
+      }
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+
+  public void dismissProgress() {
+    if (mProgress != null && mProgress.isShowing()) {
+      mProgress.dismiss();
+      mProgress = null;
+    }
+  }
 
   protected void setTitle(String title, int choose) {
 

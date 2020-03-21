@@ -57,7 +57,6 @@ public class HospitalUpdatesActivity extends BaseActivity implements HospitalUpd
   @Override public void onError(int errorCode) {
     dismissProgress();
     showToast("Network error!. Let's try again later.");
-
   }
 
   @Override public void endProgress() {

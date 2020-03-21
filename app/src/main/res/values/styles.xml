@@ -91,6 +91,18 @@
     <item name="android:fontFamily">@font/poppins_regular</item>
   </style>
 
+  <style name="LightGreenTextNormalStyle">
+    <item name="android:textColor">@color/colorLightGreenII</item>
+    <item name="android:textStyle">normal</item>
+    <item name="android:fontFamily">@font/poppins_regular</item>
+  </style>
+
+  <style name="BlueTextNormalStyle">
+    <item name="android:textColor">@color/colorBlue</item>
+    <item name="android:textStyle">normal</item>
+    <item name="android:fontFamily">@font/poppins_regular</item>
+  </style>
+
   <style name="BlackTextBoldStyle.Size16">
     <item name="android:textSize">16sp</item>
   </style>
@@ -113,6 +125,14 @@
 
   <style name="LightGrayTextNormalStyle.Size16">
     <item name="android:textSize">16sp</item>
+  </style>
+
+  <style name="LightGreenTextNormalStyle.Size15">
+    <item name="android:textSize">15sp</item>
+  </style>
+
+  <style name="BlueTextNormalStyle.Size14">
+    <item name="android:textSize">14sp</item>
   </style>
 
 </resources>
