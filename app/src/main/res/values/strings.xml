@@ -1,5 +1,5 @@
 <resources>
-  <string name="app_name">BaseMvpJava</string>
+  <string name="app_name">Covid 19 Updates</string>
 
   <string name="title_home">Home</string>
   <string name="title_hospital_updates">Hospital Live Updates</string>

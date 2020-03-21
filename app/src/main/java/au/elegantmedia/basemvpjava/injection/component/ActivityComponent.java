@@ -5,6 +5,7 @@ import au.elegantmedia.basemvpjava.injection.module.ActivityModule;
 import au.elegantmedia.basemvpjava.ui.SplashActivity;
 import au.elegantmedia.basemvpjava.ui.hospital_updates.HospitalUpdatesActivity;
 import au.elegantmedia.basemvpjava.ui.live_updates.SLUpdatesFragment;
+import au.elegantmedia.basemvpjava.ui.live_updates.WWUpdatesFragment;
 import dagger.Subcomponent;
 
 /**
@@ -19,4 +20,6 @@ public interface ActivityComponent {
   void inject(HospitalUpdatesActivity hospitalUpdatesActivity);
 
   void inject(SLUpdatesFragment slUpdatesFragment);
+
+  void inject(WWUpdatesFragment wwUpdatesFragment);
 }
