@@ -58,7 +58,108 @@ public class CurrentStatistics {
   @Expose
   private List<HospitalData> hospitalData;
 
+  public String getUpdateTime() {
+    return updateTime;
+  }
 
+  public void setUpdateTime(String updateTime) {
+    this.updateTime = updateTime;
+  }
 
+  public int getLocalNewCases() {
+    return localNewCases;
+  }
 
+  public void setLocalNewCases(int localNewCases) {
+    this.localNewCases = localNewCases;
+  }
+
+  public int getLocalTotalCasesConfirmed() {
+    return localTotalCasesConfirmed;
+  }
+
+  public void setLocalTotalCasesConfirmed(int localTotalCasesConfirmed) {
+    this.localTotalCasesConfirmed = localTotalCasesConfirmed;
+  }
+
+  public int getLocalTotalCasesInHospitals() {
+    return localTotalCasesInHospitals;
+  }
+
+  public void setLocalTotalCasesInHospitals(int localTotalCasesInHospitals) {
+    this.localTotalCasesInHospitals = localTotalCasesInHospitals;
+  }
+
+  public int getLocalDeaths() {
+    return localDeaths;
+  }
+
+  public void setLocalDeaths(int localDeaths) {
+    this.localDeaths = localDeaths;
+  }
+
+  public int getLocalNewDeaths() {
+    return localNewDeaths;
+  }
+
+  public void setLocalNewDeaths(int localNewDeaths) {
+    this.localNewDeaths = localNewDeaths;
+  }
+
+  public int getLocalRecovered() {
+    return localRecovered;
+  }
+
+  public void setLocalRecovered(int localRecovered) {
+    this.localRecovered = localRecovered;
+  }
+
+  public int getGlobalNewCases() {
+    return globalNewCases;
+  }
+
+  public void setGlobalNewCases(int globalNewCases) {
+    this.globalNewCases = globalNewCases;
+  }
+
+  public int getGlobalTotalCases() {
+    return globalTotalCases;
+  }
+
+  public void setGlobalTotalCases(int globalTotalCases) {
+    this.globalTotalCases = globalTotalCases;
+  }
+
+  public int getGlobalDeaths() {
+    return globalDeaths;
+  }
+
+  public void setGlobalDeaths(int globalDeaths) {
+    this.globalDeaths = globalDeaths;
+  }
+
+  public int getGlobalNewDeaths() {
+    return globalNewDeaths;
+  }
+
+  public void setGlobalNewDeaths(int globalNewDeaths) {
+    this.globalNewDeaths = globalNewDeaths;
+  }
+
+  public int getGlobalRecovered() {
+    return globalRecovered;
+  }
+
+  public void setGlobalRecovered(int globalRecovered) {
+    this.globalRecovered = globalRecovered;
+  }
+
+  public List<HospitalData> getHospitalData() {
+    return hospitalData;
+  }
+
+  public void setHospitalData(
+      List<HospitalData> hospitalData) {
+    this.hospitalData = hospitalData;
+  }
 }

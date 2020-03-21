@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_full_pj"
+    tools:context=".ui.hospital_updates.ViewDetailsActivity">
+
+  <include
+      android:id="@+id/toolbar_view_details"
+      layout="@layout/sub_toolbar"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <TextView
+      android:id="@+id/tv_title"
+      style="@style/LightGrayTextNormalStyle.Size16"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="16dp"
+      android:layout_marginTop="16dp"
+      android:layout_marginEnd="16dp"
+      android:gravity="start"
+      android:text="@string/label_title_desc"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintHorizontal_bias="0.0"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/toolbar_view_details" />
+
+  <TextView
+      android:id="@+id/textView"
+      style="@style/GrayTextBoldStyle.Size14"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="16dp"
+      android:layout_marginTop="16dp"
+      android:text="@string/label_hospital_name"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+  <TextView
+      android:id="@+id/tv_hospital_name"
+      style="@style/BlackTextBoldStyle.Size14"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="8dp"
+      android:layout_marginEnd="16dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@+id/textView"
+      app:layout_constraintTop_toTopOf="@+id/textView" />
+
+  <TextView
+      android:id="@+id/textView1"
+      style="@style/GrayTextBoldStyle.Size14"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="16dp"
+      android:layout_marginTop="16dp"
+      android:text="@string/label_local_patient_count"
+      app:layout_constraintEnd_toEndOf="@+id/textView2"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/tv_hospital_name" />
+
+  <TextView
+      android:id="@+id/tv_local_patient_count"
+      style="@style/BlackTextBoldStyle.Size14"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="8dp"
+      android:layout_marginEnd="16dp"
+      app:layout_constraintBottom_toBottomOf="@+id/textView1"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@+id/textView1"
+      app:layout_constraintTop_toTopOf="@+id/textView1" />
+
+  <TextView
+      android:id="@+id/textView2"
+      style="@style/GrayTextBoldStyle.Size14"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="16dp"
+      android:layout_marginTop="16dp"
+      android:text="@string/label_foreign_patient_count"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/textView1" />
+
+  <TextView
+      android:id="@+id/tv_foreign_patient_count"
+      style="@style/BlackTextBoldStyle.Size14"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="8dp"
+      android:layout_marginEnd="16dp"
+      app:layout_constraintBottom_toBottomOf="@+id/textView2"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@+id/textView2"
+      app:layout_constraintTop_toTopOf="@+id/textView2" />
+
+  <TextView
+      android:id="@+id/textView3"
+      style="@style/GrayTextBoldStyle.Size14"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="16dp"
+      android:layout_marginTop="16dp"
+      android:text="@string/label_total_patient_count"
+      app:layout_constraintEnd_toEndOf="@+id/textView2"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+  <TextView
+      android:id="@+id/tv_total_patient_count"
+      style="@style/BlackTextBoldStyle.Size14"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="8dp"
+      android:layout_marginEnd="16dp"
+      app:layout_constraintBottom_toBottomOf="@+id/textView3"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@+id/textView3"
+      app:layout_constraintTop_toTopOf="@+id/textView3" />
+
+</android.support.constraint.ConstraintLayout>

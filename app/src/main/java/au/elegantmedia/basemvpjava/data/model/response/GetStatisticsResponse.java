@@ -4,7 +4,7 @@ import au.elegantmedia.basemvpjava.data.model.CurrentStatistics;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class getStatisticsResponse {
+public class GetStatisticsResponse {
 
   @SerializedName("success")
   @Expose

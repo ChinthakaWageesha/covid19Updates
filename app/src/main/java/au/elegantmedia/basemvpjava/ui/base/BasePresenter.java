@@ -58,7 +58,7 @@ public class BasePresenter<T extends MvpView> implements Presenter<T>{
     return user;
   }
 
-  public void showWaiting(Context context) {
+  /*public void showWaiting(Context context) {
 
     if (progress == null) {
       progress = new Dialog(context, R.style.ProgressbarStyle);
@@ -78,5 +78,5 @@ public class BasePresenter<T extends MvpView> implements Presenter<T>{
       progress.dismiss();
       progress = null;
     }
-  }
+  }*/
 }

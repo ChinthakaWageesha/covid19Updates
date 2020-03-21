@@ -1,11 +1,14 @@
 package au.elegantmedia.basemvpjava.ui.base;
 
+import android.app.Dialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.util.LongSparseArray;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Window;
 import android.widget.Toast;
 import au.elegantmedia.basemvpjava.BaseApplication;
+import au.elegantmedia.basemvpjava.R;
 import au.elegantmedia.basemvpjava.data.local.PreferenceHelper;
 import au.elegantmedia.basemvpjava.injection.component.ActivityComponent;
 import au.elegantmedia.basemvpjava.injection.component.ConfigPersistentComponent;
@@ -25,6 +28,7 @@ public class BaseActivity extends AppCompatActivity {
   public String accessToken;
   private ActivityComponent mActivityComponent;
   private long mActivityId;
+  private Dialog mProgress;
 
   @Override protected void onCreate(@Nullable Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -64,6 +68,30 @@ public class BaseActivity extends AppCompatActivity {
 
   public void showToast(String message) {
     Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+  }
+
+  public void showProgress() {
+    try {
+      if (mProgress == null) {
+        mProgress = new Dialog(this, R.style.ProgressbarStyle);
+        mProgress.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        mProgress.setContentView(R.layout.content_page_loader);
+        mProgress.setCancelable(false);
+      }
+
+      if (!mProgress.isShowing()) {
+        mProgress.show();
+      }
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+
+  public void dismissProgress() {
+    if (mProgress != null && mProgress.isShowing()) {
+      mProgress.dismiss();
+      mProgress = null;
+    }
   }
 
   /*public void showError(String message) {
