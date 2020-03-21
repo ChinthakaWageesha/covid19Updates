@@ -8,6 +8,7 @@ import android.widget.TextView;
 import au.elegantmedia.basemvpjava.R;
 import au.elegantmedia.basemvpjava.ui.base.BaseActivity;
 import au.elegantmedia.basemvpjava.ui.hospital_updates.HospitalUpdatesActivity;
+import au.elegantmedia.basemvpjava.ui.live_updates.LiveUpdatesActivity;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -44,7 +45,7 @@ public class MainActivity extends BaseActivity {
         startActivity(new Intent(this, HospitalUpdatesActivity.class));
         break;
       case R.id.btn_live_updates:
-        showToast("Live updates");
+        startActivity(new Intent(this, LiveUpdatesActivity.class));
         break;
     }
   }

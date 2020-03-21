@@ -8,7 +8,10 @@
   <color name="colorLowOpBlack">#ed232323</color>
   <color name="colorWhite">#FFFFFF</color>
   <color name="colorTransparent">#00000000</color>
-  <color name="colorLightGreen">#3DD8CD</color>
+  <color name="colorLightGreenII">#3DD8CD</color>
   <color name="colorTextGray">#61788C</color>
   <color name="colorLightGray">#83A2C2</color>
+
+  <color name="colorPuertoRico">#FF41BAAE</color>
+  <color name="colorLightGreen">#FF41BAAE</color>
 </resources>

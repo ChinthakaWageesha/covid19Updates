@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.live_updates.LiveUpdatesActivity">
+
+  <include
+      android:id="@+id/toolbar_live_updates"
+      layout="@layout/sub_toolbar"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <android.support.constraint.ConstraintLayout
+      android:id="@+id/constraintLayout"
+      android:layout_width="match_parent"
+      android:layout_height="38dp"
+      android:layout_marginStart="8dp"
+      android:layout_marginTop="12dp"
+      android:layout_marginEnd="8dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/toolbar_live_updates">
+
+    <TextView
+        android:id="@+id/tv_sri_lanka_updates"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_green_left_corner_rounded"
+        android:fontFamily="@font/poppins_regular"
+        android:gravity="center"
+        android:text="@string/label_sri_lanka"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tv_world_updates"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_world_updates"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_white_green_stroke_right_corner_round"
+        android:fontFamily="@font/poppins_regular"
+        android:gravity="center"
+        android:text="@string/label_world"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_sri_lanka_updates"
+        app:layout_constraintTop_toTopOf="parent" />
+  </android.support.constraint.ConstraintLayout>
+
+  <FrameLayout
+      android:id="@+id/fl_updates_container"
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      android:layout_marginStart="8dp"
+      android:layout_marginTop="8dp"
+      android:layout_marginEnd="8dp"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+</android.support.constraint.ConstraintLayout>

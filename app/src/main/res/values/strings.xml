@@ -4,6 +4,7 @@
   <string name="title_home">Home</string>
   <string name="title_hospital_updates">Hospital Live Updates</string>
   <string name="title_hospital_details">Hospital Details</string>
+  <string name="title_live_updates">Live Updates</string>
 
   <string name="main_hospital_update_desc">Sri Lanka main hospital\'s \n live update</string>
   <string name="live_update_desc">World wide &amp; Sri Lanka\'s live update</string>
@@ -15,4 +16,7 @@
   <string name="label_local_patient_count">Local patient count</string>
   <string name="label_foreign_patient_count">Foreign patient count</string>
   <string name="label_total_patient_count">Total patient count</string>
+
+  <string name="label_sri_lanka">Sri Lanka</string>
+  <string name="label_world">World Wide</string>
 </resources>
