@@ -1,6 +1,7 @@
 package au.elegantmedia.basemvpjava.ui.live_updates;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.view.LayoutInflater;
@@ -10,12 +11,13 @@ import android.widget.TextView;
 import au.elegantmedia.basemvpjava.R;
 import au.elegantmedia.basemvpjava.data.model.response.GetStatisticsResponse;
 import au.elegantmedia.basemvpjava.ui.base.BaseFragment;
+import au.elegantmedia.basemvpjava.util.NetworkUtil;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import javax.inject.Inject;
 
-public class WWUpdatesFragment extends BaseFragment implements LiveUpdateMvpView{
+public class WWUpdatesFragment extends BaseFragment implements LiveUpdateMvpView {
 
   @Inject LiveUpdatesPresenter liveUpdatesPresenter;
 
@@ -26,7 +28,10 @@ public class WWUpdatesFragment extends BaseFragment implements LiveUpdateMvpView
   @BindView(R.id.tv_recovered) TextView tvRecovered;
   @BindView(R.id.tv_update_time) TextView tvUpdateTime;
   @BindView(R.id.cl_ww_base) ConstraintLayout clWwBase;
+  @BindView(R.id.tv_no_internet) TextView tvNoInternet;
   Unbinder unbinder;
+
+  private Context mContext;
 
   public WWUpdatesFragment() {
     // Required empty public constructor
@@ -35,15 +40,15 @@ public class WWUpdatesFragment extends BaseFragment implements LiveUpdateMvpView
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container,
       Bundle savedInstanceState) {
-    // Inflate the layout for this fragment
     View view = inflater.inflate(R.layout.fragment_wwupdates, container, false);
     activityComponent().inject(this);
     unbinder = ButterKnife.bind(this, view);
     liveUpdatesPresenter.attachView(this);
+    mContext = getContext();
     return view;
   }
 
-  @SuppressLint("SetTextI18n") private void setData(GetStatisticsResponse data){
+  @SuppressLint("SetTextI18n") private void setData(GetStatisticsResponse data) {
     clWwBase.setVisibility(View.VISIBLE);
     tvNewCases.setText(": " + data.getStatistics().getGlobalNewCases());
     tvTotalCases.setText(": " + data.getStatistics().getGlobalTotalCases());
@@ -55,7 +60,13 @@ public class WWUpdatesFragment extends BaseFragment implements LiveUpdateMvpView
 
   @Override public void onResume() {
     super.onResume();
-    liveUpdatesPresenter.getData();
+    if (NetworkUtil.isNetworkConnected(mContext)) {
+      tvNoInternet.setVisibility(View.GONE);
+      liveUpdatesPresenter.getData();
+    } else {
+      clWwBase.setVisibility(View.GONE);
+      tvNoInternet.setVisibility(View.VISIBLE);
+    }
   }
 
   @Override public void onDestroyView() {
@@ -72,7 +83,9 @@ public class WWUpdatesFragment extends BaseFragment implements LiveUpdateMvpView
   }
 
   @Override public void onError(int errorCode) {
-    showToast("Network error!. Let's try again later.");
+    clWwBase.setVisibility(View.GONE);
+    tvNoInternet.setVisibility(View.VISIBLE);
+    tvNoInternet.setText(getString(R.string.label_network_error));
   }
 
   @Override public void endProgress() {

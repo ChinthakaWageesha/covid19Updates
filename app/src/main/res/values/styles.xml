@@ -91,6 +91,12 @@
     <item name="android:fontFamily">@font/poppins_regular</item>
   </style>
 
+  <style name="LightGrayTextItalicStyle">
+    <item name="android:textColor">@color/colorLightGray</item>
+    <item name="android:textStyle">italic</item>
+    <item name="android:fontFamily">@font/poppins_regular</item>
+  </style>
+
   <style name="LightGreenTextNormalStyle">
     <item name="android:textColor">@color/colorLightGreenII</item>
     <item name="android:textStyle">normal</item>
@@ -125,6 +131,10 @@
 
   <style name="LightGrayTextNormalStyle.Size16">
     <item name="android:textSize">16sp</item>
+  </style>
+
+  <style name="LightGrayTextItalicStyle.Size14">
+    <item name="android:textSize">14sp</item>
   </style>
 
   <style name="LightGreenTextNormalStyle.Size15">

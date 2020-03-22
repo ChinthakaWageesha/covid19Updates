@@ -21,11 +21,14 @@
   <string name="label_sri_lanka">Sri Lanka</string>
   <string name="label_world">World Wide</string>
 
-  <string name="label_new_cases">New cases recorded today</string>
+  <string name="label_new_cases">New cases recorded</string>
   <string name="label_total_cases">Total cases recorded</string>
   <string name="label_all_deaths">Total deaths recorded</string>
-  <string name="label_new_deaths">New deaths recorded today</string>
+  <string name="label_new_deaths">New deaths recorded</string>
   <string name="label_recovered">Recovered patient count</string>
   <string name="label_total_in_hospital">Total patients in hospitals</string>
-  <string name="label_update_time_desc">Latest record by World Health Organization</string>
+  <string name="label_update_time_desc">According to the latest record by World Health Organization on </string>
+
+  <string name="label_network_error">"Sorry. We cannot connect to the server right now. Let's try again later."</string>
+  <string name="label_no_internet">Seems something wrong with your network connection. Please check it and try again later.</string>
 </resources>

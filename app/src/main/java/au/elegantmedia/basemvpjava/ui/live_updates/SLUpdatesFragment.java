@@ -1,6 +1,7 @@
 package au.elegantmedia.basemvpjava.ui.live_updates;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
@@ -12,6 +13,7 @@ import au.elegantmedia.basemvpjava.R;
 import au.elegantmedia.basemvpjava.data.model.response.GetStatisticsResponse;
 import au.elegantmedia.basemvpjava.ui.base.BaseFragment;
 import au.elegantmedia.basemvpjava.ui.hospital_updates.HospitalUpdatesActivity;
+import au.elegantmedia.basemvpjava.util.NetworkUtil;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -30,7 +32,10 @@ public class SLUpdatesFragment extends BaseFragment implements LiveUpdateMvpView
   @BindView(R.id.tv_all_in_hospital) TextView tvAllInHospital;
   @BindView(R.id.cl_sl_base) ConstraintLayout clSlBase;
   @BindView(R.id.tv_update_time) TextView tvUpdateTime;
+  @BindView(R.id.tv_no_internet) TextView tvNoInternet;
   Unbinder unbinder;
+
+  private Context mContext;
 
   public SLUpdatesFragment() {
     // Required empty public constructor
@@ -43,6 +48,7 @@ public class SLUpdatesFragment extends BaseFragment implements LiveUpdateMvpView
     activityComponent().inject(this);
     unbinder = ButterKnife.bind(this, view);
     liveUpdatesPresenter.attachView(this);
+    mContext = getContext();
     return view;
   }
 
@@ -59,7 +65,14 @@ public class SLUpdatesFragment extends BaseFragment implements LiveUpdateMvpView
 
   @Override public void onResume() {
     super.onResume();
-    liveUpdatesPresenter.getData();
+
+    if (NetworkUtil.isNetworkConnected(mContext)){
+      tvNoInternet.setVisibility(View.GONE);
+      liveUpdatesPresenter.getData();
+    } else {
+      clSlBase.setVisibility(View.GONE);
+      tvNoInternet.setVisibility(View.VISIBLE);
+    }
   }
 
   @Override public void onDestroyView() {
@@ -76,7 +89,9 @@ public class SLUpdatesFragment extends BaseFragment implements LiveUpdateMvpView
   }
 
   @Override public void onError(int errorCode) {
-    showToast("Network error!. Let's try again later.");
+    clSlBase.setVisibility(View.GONE);
+    tvNoInternet.setVisibility(View.VISIBLE);
+    tvNoInternet.setText(getString(R.string.label_network_error));
   }
 
   @Override public void endProgress() {
@@ -84,6 +99,6 @@ public class SLUpdatesFragment extends BaseFragment implements LiveUpdateMvpView
   }
 
   @OnClick(R.id.tv_goto_hospital_data) public void onViewClicked() {
-    startActivity(new Intent(getContext(), HospitalUpdatesActivity.class));
+    startActivity(new Intent(mContext, HospitalUpdatesActivity.class));
   }
 }
