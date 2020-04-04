@@ -33,9 +33,11 @@ public class SLUpdatesFragment extends BaseFragment implements LiveUpdateMvpView
   @BindView(R.id.cl_sl_base) ConstraintLayout clSlBase;
   @BindView(R.id.tv_update_time) TextView tvUpdateTime;
   @BindView(R.id.tv_no_internet) TextView tvNoInternet;
+  @BindView(R.id.tv_active_cases) TextView tvActiveCases;
   Unbinder unbinder;
 
   private Context mContext;
+  private int totalActiveCases;
 
   public SLUpdatesFragment() {
     // Required empty public constructor
@@ -53,20 +55,26 @@ public class SLUpdatesFragment extends BaseFragment implements LiveUpdateMvpView
   }
 
   @SuppressLint("SetTextI18n") private void setData(GetStatisticsResponse data) {
+    totalActiveCases = data.getStatistics().getLocalTotalCasesConfirmed() - (data.getStatistics()
+        .getLocalRecovered() + data.getStatistics().getLocalDeaths());
+
     clSlBase.setVisibility(View.VISIBLE);
+    tvActiveCases.setText(": " + totalActiveCases);
     tvNewCases.setText(": " + data.getStatistics().getLocalNewCases());
     tvTotalCases.setText(": " + data.getStatistics().getLocalTotalCasesConfirmed());
     tvNewDeaths.setText(": " + data.getStatistics().getLocalNewDeaths());
     tvTotalDeaths.setText(": " + data.getStatistics().getLocalDeaths());
     tvRecovered.setText(": " + data.getStatistics().getLocalRecovered());
-    tvAllInHospital.setText(": " + data.getStatistics().getLocalTotalCasesInHospitals());
+    tvAllInHospital.setText(
+        ": " + (data.getStatistics().getLocalTotalCasesInHospitals() - data.getStatistics()
+            .getLocalRecovered()));
     tvUpdateTime.setText(data.getStatistics().getUpdateTime());
   }
 
   @Override public void onResume() {
     super.onResume();
 
-    if (NetworkUtil.isNetworkConnected(mContext)){
+    if (NetworkUtil.isNetworkConnected(mContext)) {
       tvNoInternet.setVisibility(View.GONE);
       liveUpdatesPresenter.getData();
     } else {

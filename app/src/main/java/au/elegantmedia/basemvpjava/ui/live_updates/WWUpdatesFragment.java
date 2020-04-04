@@ -29,9 +29,11 @@ public class WWUpdatesFragment extends BaseFragment implements LiveUpdateMvpView
   @BindView(R.id.tv_update_time) TextView tvUpdateTime;
   @BindView(R.id.cl_ww_base) ConstraintLayout clWwBase;
   @BindView(R.id.tv_no_internet) TextView tvNoInternet;
+  @BindView(R.id.tv_active_cases) TextView tvActiveCases;
   Unbinder unbinder;
 
   private Context mContext;
+  private int totalActiveCases;
 
   public WWUpdatesFragment() {
     // Required empty public constructor
@@ -49,6 +51,10 @@ public class WWUpdatesFragment extends BaseFragment implements LiveUpdateMvpView
   }
 
   @SuppressLint("SetTextI18n") private void setData(GetStatisticsResponse data) {
+    totalActiveCases =
+        data.getStatistics().getGlobalTotalCases() - (data.getStatistics().getGlobalRecovered()
+            + data.getStatistics().getGlobalDeaths());
+
     clWwBase.setVisibility(View.VISIBLE);
     tvNewCases.setText(": " + data.getStatistics().getGlobalNewCases());
     tvTotalCases.setText(": " + data.getStatistics().getGlobalTotalCases());
@@ -56,6 +62,7 @@ public class WWUpdatesFragment extends BaseFragment implements LiveUpdateMvpView
     tvTotalDeaths.setText(": " + data.getStatistics().getGlobalDeaths());
     tvRecovered.setText(": " + data.getStatistics().getGlobalRecovered());
     tvUpdateTime.setText(data.getStatistics().getUpdateTime());
+    tvActiveCases.setText(": " + totalActiveCases);
   }
 
   @Override public void onResume() {
