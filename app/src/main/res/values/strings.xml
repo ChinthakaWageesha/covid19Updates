@@ -6,9 +6,9 @@
   <string name="title_hospital_details">Hospital Details</string>
   <string name="title_live_updates">Live Updates</string>
 
-  <string name="main_hospital_update_desc">Sri Lanka main hospital\'s \n live update</string>
-  <string name="see_main_hospital_update_desc">See Sri Lanka main hospital\'s \n live update</string>
-  <string name="live_update_desc">World wide &amp; Sri Lanka\'s live update</string>
+  <string name="main_hospital_update_desc">Sri Lanka hospital\'s\nlive update</string>
+  <string name="see_main_hospital_update_desc">See Sri Lanka main hospital\'s\nlive update</string>
+  <string name="live_update_desc">Global &amp; Sri Lanka\'s\nlive update</string>
   <string name="label_patient_count_desc">Total admitted patient count : </string>
   <string name="label_see_more">See more</string>
   <string name="label_title_desc">Total number of patients admitted and under diagnosis for Covid 19.</string>

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="au.elegantmedia.basemvpjava">
+    package="au.em.corona">
 
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
   <uses-permission android:name="android.permission.INTERNET" />
 
   <application
-      android:name=".BaseApplication"
+      android:name="au.em.corona.BaseApplication"
       android:allowBackup="true"
       android:icon="@mipmap/ic_launcher"
       android:label="@string/app_name"
@@ -15,7 +15,7 @@
       android:theme="@style/AppTheme">
 
     <activity
-        android:name=".ui.SplashActivity"
+        android:name="au.em.corona.ui.SplashActivity"
         android:screenOrientation="portrait"
         android:theme="@style/SplashTheme">
       <intent-filter>
@@ -25,19 +25,19 @@
       </intent-filter>
     </activity>
     <activity
-        android:name=".ui.main.MainActivity"
+        android:name="au.em.corona.ui.main.MainActivity"
         android:screenOrientation="portrait"
         android:windowSoftInputMode="stateHidden" />
     <activity
-        android:name=".ui.hospital_updates.HospitalUpdatesActivity"
+        android:name="au.em.corona.ui.hospital_updates.HospitalUpdatesActivity"
         android:screenOrientation="portrait"
         android:windowSoftInputMode="stateHidden" />
     <activity
-        android:name=".ui.live_updates.LiveUpdatesActivity"
+        android:name="au.em.corona.ui.live_updates.LiveUpdatesActivity"
         android:screenOrientation="portrait"
         android:windowSoftInputMode="stateHidden" />
     <activity
-        android:name=".ui.hospital_updates.ViewDetailsActivity"
+        android:name="au.em.corona.ui.hospital_updates.ViewDetailsActivity"
         android:screenOrientation="portrait"
         android:windowSoftInputMode="stateHidden" />
 
